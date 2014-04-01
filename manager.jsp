@@ -26,7 +26,7 @@
                             Manager Home
                         </strong>
                     </h3>
-                    <p class="text-center">You've successfully logged into SAMS.</p>
+                    <p class="text-center">Welcome to SAMS - Manager Home</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
