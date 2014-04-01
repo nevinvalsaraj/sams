@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
 
                 <div class="row alert alert-success">
                     <h3 class="text-center"><strong>Logged Out!</strong></h3>
