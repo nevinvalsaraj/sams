@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>SAMS</title>
+    <title>Error!</title>
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -21,21 +20,9 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
 
-                <div class="row alert alert-info">
-                    <h3 class="text-center">Login Page</h3>
-                    <div class="col-md-6 col-md-offset-3">
-
-                        <form class="form from-lg" role="form" action="checkLogin.jsp" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User ID" name="username">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" name="password">
-                            </div>
-                            <button type="submit" class="btn btn-lg btn-success">Log In</button>
-                        </form>
-
-                    </div>
+                <div class="row alert alert-danger">
+                    <h3 class="text-center"><strong>Authentication Error!</strong></h3>
+                    <p class="text-center">Please sign in with the correct username and password.</p>
                 </div>
 
             </div>
