@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ include file="Employee.jsp" %>
 <html>
 		<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,10 +7,10 @@
 		</head>
 		<body>
 				<%
-				String username=request.getParameter("username");
+				int username=Integer.parseInt(request.getParameter("username"));
 				String password=request.getParameter("password");
-				
-				if((username.equals("nevin") && password.equals("nevin")))
+				Employee e = new Employee();
+				if(e.queryEmployee(username,password)!=-1)
 						{
 						session.setAttribute("username",username);
 						response.sendRedirect("Home.jsp");
