@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Error!</title>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
                             %>
                         </strong>
                     </h3>
-                    <p class="text-center">You've successfully logged out from SAMS.</p>
+                    <p class="text-center">You've successfully logged into SAMS.</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
