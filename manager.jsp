@@ -145,7 +145,7 @@
                     <div class="row alert alert-info">
                         <h3 class="text-center">Update Existing Salesperson Details</h3>
                         <form class="form-horizontal" role="form">
-                        <div class="form-group">
+                            <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
@@ -166,6 +166,35 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-8">
                                     <button type="submit" class="btn btn-primary btn-default">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row alert alert-info">
+                    <div class="row alert alert-info">
+                        <h3 class="text-center">Pay Commission</h3>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Employee ID</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Employee ID">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Amount to Pay</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Rs.</span>
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Amount to Pay">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-primary btn-default">Pay Commission</button>
                                 </div>
                             </div>
                         </form>
