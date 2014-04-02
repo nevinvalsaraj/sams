@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Start Date</label>
                             <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today">
+                                <div class="bfh-datepicker" data-format="y-m-d" data-date="today">
                                 </div>
                             </div>
                         </div>
