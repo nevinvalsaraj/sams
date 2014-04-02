@@ -1,4 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="Error.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<jsp:useBean id="user" class="user.UserData" scope="session"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@
                     <h3 class="text-center">
                         <strong>
                             <%
-                            out.println("Welcome "+session.getAttribute("username").toString().toUpperCase());
+                            out.println("Welcome "+user.getUsername());
                             %>
                         </strong>
                     </h3>

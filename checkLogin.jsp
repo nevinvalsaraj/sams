@@ -1,4 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<jsp:useBean id="user" class="user.UserData" scope="session"/>
+
 <%@ include file="Classes/includes.jsp" %>
 <html>
 		<head>
@@ -7,12 +10,13 @@
 		</head>
 		<body>
 				<%
-				Employee e = new Employee(Integer.parseInt(request.getParameter("username")),request.getParameter("password"));
+				//String u = user.getUserName();
+				//String p = user.getPassword();
+				Employee e = new Employee(7,"n");
 				EmployeeTable et = new EmployeeTable();
-				e=et.queryEmployee(e);
+				e = et.queryEmployee(e);
 				if(e!=null)
 				{
-					session.setAttribute("username",e.eName);
 					response.sendRedirect("Home.jsp");
 				}
 				else

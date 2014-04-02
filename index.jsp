@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <%
+    session.removeAttribute("username");
+    session.removeAttribute("password");
+    session.invalidate();
+    %>
     <div class="container-fluid">
         <div class="row alert alert-info">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
