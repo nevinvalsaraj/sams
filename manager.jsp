@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
 
                 <div class="row alert alert-success">
                     <h3 class="text-center">
@@ -26,39 +26,153 @@
                             Manager Home
                         </strong>
                     </h3>
-                    <p class="text-center">You've successfully logged into SAMS.</p>
+                    <p class="text-center">Welcome to SAMS - Manager Home</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
+
+
                 <div class="row alert alert-info">
-                    <div class="col-md-6 alert alert-info">
-                        <h3>Item 1</h3>
-                    </div>
-                    <col-md-6><button type="button" class="btn btn-large btn-primary pull-right">button</button></col-md-6>
+                    <h3 class="text-center">Book New Show</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Show Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Start Date</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Start Date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">End Date</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="End Date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Max Price - Balcony</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Rs.</span>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Max Price - Balcony">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Max price - Ordinary</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Rs.</span>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Max price - Ordinary">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Balcony</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Max seats - Balcony">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Ordinary</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Max seats - Ordinary">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+                            <div class="col-sm-8">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Book Show</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
+
                 <div class="row alert alert-info">
-                    <div class="col-md-6 alert alert-info">
-                        <h3>Item 2</h3>
+                    <div class="row alert alert-info">
+                        <h3 class="text-center">Create New Salesperson Login</h3>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-primary btn-default">Create Login</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <col-md-6><button type="button" class="btn btn-large btn-primary pull-right">button</button></col-md-6>
                 </div>
+
                 <div class="row alert alert-info">
-                    <div class="col-md-6 alert alert-info">
-                        <h3>Item 3</h3>
+                    <div class="row alert alert-info">
+                        <h3 class="text-center">Delete Existing Salesperson Login</h3>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-primary btn-default">Delete Login</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <col-md-6><button type="button" class="btn btn-large btn-primary pull-right">button</button></col-md-6>
                 </div>
+
                 <div class="row alert alert-info">
-                    <div class="col-md-6 alert alert-info">
-                        <h3>Item 4</h3>
+                    <div class="row alert alert-info">
+                        <h3 class="text-center">Update Existing Salesperson Details</h3>
+                        <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-primary btn-default">Update</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <col-md-6><button type="button" class="btn btn-large btn-primary pull-right">button</button></col-md-6>
                 </div>
-                <div class="row alert alert-info">
-                    <div class="col-md-6 alert alert-info">
-                        <h3>Item 5</h3>
-                    </div>
-                    <col-md-6><button type="button" class="btn btn-large btn-primary pull-right">button</button></col-md-6>
-                </div>
+
+
             </div>
         </div>
     </div>
