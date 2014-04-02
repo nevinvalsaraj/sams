@@ -104,13 +104,13 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -129,7 +129,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -148,19 +148,19 @@
                         <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="New Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="New Password">
                                 </div>
                             </div>
                             <div class="form-group">
