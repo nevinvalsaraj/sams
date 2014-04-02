@@ -17,7 +17,14 @@
 				e = et.queryEmployee(e);
 				if(e!=null)
 				{
-					response.sendRedirect("Home.jsp");
+					session.setAttribute("username",e.eName);
+					
+					if(e.eType == 0)
+						response.sendRedirect("manager.jsp");	
+					else if(e.eType == 1)
+						response.sendRedirect("clerk.jsp");	
+					else
+						response.sendRedirect("salesperson.jsp");
 				}
 				else
 					response.sendRedirect("Error.jsp");
