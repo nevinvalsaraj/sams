@@ -73,29 +73,36 @@
 
                 <div class="row alert alert-info">
                     <div class="row alert alert-info">
-                        <h3 class="text-center">Create New Salesperson Login</h3>
+                        <h3 class="text-center">Cancel Ticket</h3>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
+                                <label for="inputEmail3" class="col-sm-4 control-label">Transaction ID</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
+                                <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Password">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Ordinary tickets">
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Balcony tickets">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Create Login</button>
+                                    <button type="submit" class="btn btn-primary btn-default">Cancel Ticket</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                
+
 
             </div>
         </div>
