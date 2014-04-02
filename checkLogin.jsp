@@ -13,7 +13,13 @@
 				if(e!=null)
 				{
 					session.setAttribute("username",e.eName);
-					response.sendRedirect("Home.jsp");
+					
+					if(e.eType == 0)
+						response.sendRedirect("manager.jsp");	
+					else if(e.eType == 1)
+						response.sendRedirect("clerk.jsp");	
+					else
+						response.sendRedirect("salesperson.jsp");	
 				}
 				else
 					response.sendRedirect("Error.jsp");
