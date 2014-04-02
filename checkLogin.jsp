@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="Employee.jsp" %>
+<%@ include file="Classes/includes.jsp" %>
 <html>
 		<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,16 +7,16 @@
 		</head>
 		<body>
 				<%
-				int username=Integer.parseInt(request.getParameter("username"));
-				String password=request.getParameter("password");
-				Employee e = new Employee();
-				if(e.queryEmployee(username,password)!=-1)
-						{
-						session.setAttribute("username",username);
-						response.sendRedirect("Home.jsp");
-						}
+				Employee e = new Employee(Integer.parseInt(request.getParameter("username")),request.getParameter("password"));
+				EmployeeTable et = new EmployeeTable();
+				e=et.queryEmployee(e);
+				if(e!=null)
+				{
+					session.setAttribute("username",e.eName);
+					response.sendRedirect("Home.jsp");
+				}
 				else
-						response.sendRedirect("Error.jsp");
+					response.sendRedirect("Error.jsp");
 				%>
 		</body>
 </html>
