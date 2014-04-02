@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-formhelpers.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -43,13 +44,15 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Start Date</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Start Date">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">End Date</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="End Date">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -210,6 +213,7 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-formhelpers.js"></script>
 </body>
 
 </html>
