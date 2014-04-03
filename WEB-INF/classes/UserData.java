@@ -1,10 +1,10 @@
 package user;
 
 public class UserData {
-    String username;
+    int username;
     String password;
 
-    public void setUsername( String value )
+    public void setUsername( int value )
     {
         username = value;
     }
@@ -12,6 +12,6 @@ public class UserData {
     {
         password = value;
     }
-    public String getUsername() { return username; }
+    public int getUsername() { return username; }
     public String getPassword() { return password; }
 }

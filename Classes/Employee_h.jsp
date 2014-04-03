@@ -64,17 +64,39 @@ class EmployeeTable extends database{
         }
         executeP();
     }
-    Employee queryEmployee(Employee e)
+    Employee validate(int eId,String ePassword)
     {
         Employee temp = null;
         prepareStat("select * from eTable where eId=? and ePassword=?");
         try {
-            pS.setInt(1,e.eId);
-            pS.setString(2,e.ePassword);
+            pS.setInt(1,eId);
+            pS.setString(2,ePassword);
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         r = queryP();
+        try {
+            if(r.wasNull())
+                return null;
+            if(r.next())
+                r.first();
+            temp = new Employee();
+            temp.eId = r.getInt(1);
+            temp.eName = r.getString(2);
+            temp.ePassword = r.getString(3);
+            temp.eType = r.getInt(4);
+            temp.eCommission = r.getInt(5);
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return temp;
+    }
+    Employee queryEmployee(int eId)
+    {
+        Employee temp = null;
+        r = query("select * from eTable where eId="+eId);
+        
         try {
             if(r.wasNull())
                 return null;

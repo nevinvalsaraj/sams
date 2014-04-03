@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ page import="user.*" %>
+<jsp:useBean id="user" class="user.UserData" scope="session"/>
 
 <head>
     <title>SAMS</title>
@@ -12,11 +14,6 @@
 </head>
 
 <body>
-    <%
-    session.removeAttribute("username");
-    session.removeAttribute("password");
-    session.invalidate();
-    %>
     <div class="container-fluid">
         <div class="row alert alert-info">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -32,7 +29,7 @@
 
                         <form class="form from-lg" role="form" action="checkLogin.jsp" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User ID" name="username">
+                                <input type="text" class="form-control" placeholder="User ID" name="id">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" name="password">

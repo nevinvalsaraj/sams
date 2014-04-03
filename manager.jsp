@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@ include file="Classes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

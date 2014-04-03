@@ -20,10 +20,10 @@ class ExpenseTable extends database{
     {
         createExTable();
     }
-    //tId,eId,sId,nBal,nOrd,amount
+    //exId,eId,sId,exTitle,exDescripion,exDate,amount
     private void createExTable()
     {
-        execute("create table exTable(exId int auto_increment,eId int,sId int,bDate varchar(30),nBal int,nOrd int,amount int,primary(tId))");
+        execute("create table exTable(exId int auto_increment,eId int,sId int,exTitle varchar(20),exDescripion varchar(50),exDate varchar(30),amount int,primary key(exId))");
     }
     int insertExpense(Expense ex,Show s,Employee e)
     {
@@ -73,6 +73,7 @@ class ExpenseTable extends database{
             temp.exDescripion = r.getString(5);
             temp.exDate = r.getString(6);
             temp.amount = r.getInt(7);
+            r.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
