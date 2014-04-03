@@ -53,16 +53,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Ordinary tickets">
+                                <input type="text" class="form-control bfh-number">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
                             <div class="col-sm-8">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Balcony tickets">
-                                </div>
+                                <input type="text" class="form-control bfh-number">
                             </div>
                         </div>
                         
@@ -88,13 +85,13 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Ordinary tickets">
+                                    <input type="text" class="form-control bfh-number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="No. of Balcony tickets">
+                                    <input type="text" class="form-control bfh-number">
                                 </div>
                             </div>
                             
