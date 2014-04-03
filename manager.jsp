@@ -77,13 +77,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Balcony</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Max seats - Balcony">
+                                <input type="text" class="form-control bfh-number">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Ordinary</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Max seats - Ordinary">
+                                <input type="text" class="form-control bfh-number">
                             </div>
                         </div>
                         <div class="form-group">
