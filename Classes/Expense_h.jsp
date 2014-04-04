@@ -8,11 +8,12 @@ class Expense{
     String exDate;
     int amount;
     Expense(){}
-    Expense(String exTitle_,String exDescription_,int amount_){
+    Expense(String exTitle_,String exDescription_,String amount_){
         Date d = new Date();
         exTitle=exTitle_;
         exDescripion=exDescription_;
         exDate = d.toString();
+        amount = Integer.parseInt(amount_);
     }
 }
 class ExpenseTable extends database{
@@ -25,12 +26,12 @@ class ExpenseTable extends database{
     {
         execute("create table exTable(exId int auto_increment,eId int,sId int,exTitle varchar(20),exDescripion varchar(50),exDate varchar(30),amount int,primary key(exId))");
     }
-    int insertExpense(Expense ex,Show s,Employee e)
+    int insertExpense(Expense ex,String sId,String eId)
     {
         prepareStat("insert into exTable values(exId,?,?,?,?,?,?)");
         try {
-            pS.setInt(1,e.eId);
-            pS.setInt(2,s.sId);
+            pS.setInt(1,Integer.parseInt(eId));
+            pS.setInt(2,Integer.parseInt(sId));
             pS.setString(3,ex.exTitle);
             pS.setString(4,ex.exDescripion);
             pS.setString(5,ex.exDate);

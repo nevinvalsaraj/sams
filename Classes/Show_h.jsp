@@ -74,7 +74,7 @@ public class ShowTable extends database{
             if(r.next())
                 r.first();
             temp = new Show();
-            temp.sId = sId;
+            temp.sId = r.getInt(1);
             temp.sName = r.getString(2);
             temp.sDate = r.getString(3);
             temp.eDate = r.getString(4);

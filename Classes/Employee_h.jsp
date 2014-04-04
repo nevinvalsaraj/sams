@@ -6,11 +6,11 @@ class Employee{
     int eType;
     int eCommission;
     Employee(){}
-    Employee(String eName_,String ePassword_,String eType)
+    Employee(String eName_,String ePassword_,String eType_)
     {
         eName = eName_;
         ePassword = ePassword_;
-        eType = Integer.parseInt(eType);
+        eType = Integer.parseInt(eType_);
     }
 }
 class EmployeeTable extends database{

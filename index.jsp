@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ page import="user.*" %>
-<jsp:useBean id="user" class="user.UserData" scope="session"/>
 
 <head>
     <title>SAMS</title>

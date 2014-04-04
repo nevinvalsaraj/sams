@@ -8,12 +8,13 @@
 		</head>
 		<body>
 				<%
-				int id = Integer.parseInt(request.getParameter("id"));
+				String id = request.getParameter("id");
 				String pass = request.getParameter("password");
 				EmployeeTable et = new EmployeeTable();
 				Employee e = et.validate(id,pass);
 				if(e!=null)
 				{
+					session.setAttribute("id",id);
 					if(e.eType == 0)
 						response.sendRedirect("manager.jsp");	
 					else if(e.eType == 1)

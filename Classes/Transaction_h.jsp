@@ -8,12 +8,12 @@ class Transaction{
     int nOrd;
     int amount;
     Transaction(){}
-    Transaction(int nBal_,int nOrd_)
+    Transaction(String nBal_,String nOrd_)
     {
         Date d = new Date();
         bDate = d.toString();
-        nBal = nBal_;
-        nOrd = nOrd_;
+        nBal = Integer.parseInt(nBal_);
+        nOrd = Integer.parseInt(nOrd_);
     }
 }
 public class TransactionTable extends database{
@@ -53,14 +53,14 @@ public class TransactionTable extends database{
         }
         return t.tId;
     }
-    void deleteTransaction(int tId)
+    void deleteTransaction(String tId)
     {
-        execute("delete from tTable where tId="+tId);
+        execute("delete from tTable where tId="+Integer.parseInt(tId));
     }
-    Transaction queryTransaction(int tId)
+    Transaction queryTransaction(String tId)
     {
         Transaction temp = null;
-        r = query("select * from tTable where tId="+tId);
+        r = query("select * from tTable where tId="+Integer.parseInt(tId));
 
         try {
             if(r.wasNull())
@@ -85,7 +85,7 @@ public class TransactionTable extends database{
     int getAmount(Transaction t,Show s)
     {
         ShowTable st = new ShowTable();
-        s = st.queryShow(s.sId);
+        s = st.queryShow(s.sId+"");
         return s.pBal*t.nBal + s.pOrd*t.nOrd;
     }
 }

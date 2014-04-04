@@ -35,7 +35,7 @@
 
                 <div class="row alert alert-info">
                     <h3 class="text-center">Add Expense Record</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/addExp.jsp">
                         
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
@@ -61,7 +61,7 @@
                         
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
-                                <button type="submit" class="btn btn-primary btn-default" method="POST">Add Expense</button>
+                                <button type="submit" class="btn btn-primary btn-default">Add Expense</button>
                             </div>
                         </div>
                     </form>
