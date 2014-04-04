@@ -47,20 +47,20 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Show ID">
+                                <input type="text" class="form-control" name="issue_showid" placeholder="Show ID">
                             </div>
                         </div>
                     
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="issue_ord">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="issue_bal">
                             </div>
                         </div>
                         
@@ -80,19 +80,19 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Transaction ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
+                                <input type="text" class="form-control" name="cancel_transid" placeholder="User Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="cancel_ord">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="cancel_bal">
                             </div>
                         </div>
                         

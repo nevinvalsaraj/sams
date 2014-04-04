@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Show Name">
+                                <input type="text" class="form-control" name="book_name" placeholder="Show Name">
                             </div>
                         </div>
                         <div class="form-group">
@@ -72,7 +72,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Max Price - Balcony">
+                                    <input type="text" class="form-control" name="book_pricebal" placeholder="Max Price - Balcony">
                                 </div>
                             </div>
                         </div>
@@ -81,28 +81,23 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Max price - Ordinary">
+                                    <input type="text" class="form-control" name="book_priceord" placeholder="Max price - Ordinary">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Balcony</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="book_seatbal">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Max seats - Ordinary</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number">
+                                <input type="text" class="form-control bfh-number" name="book_seatord">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
-                            <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
                                 <button type="submit" class="btn btn-primary btn-default">Book Show</button>
@@ -119,13 +114,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
+                                <input type="text" class="form-control" name="newlogin_name" placeholder="User Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Password">
+                                <input type="text" class="form-control" name="newlogin_pwd" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -143,7 +138,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
+                                <input type="text" class="form-control" name="deletelogin_userid" placeholder="User ID">
                             </div>
                         </div>
                         <div class="form-group">
@@ -161,19 +156,19 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
+                                <input type="text" class="form-control" name="updatelogin_userid" placeholder="User ID">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="New Name">
+                                <input type="text" class="form-control" name="updatelogin_name" placeholder="New Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="New Password">
+                                <input type="text" class="form-control" name="updatelogin_pwd" placeholder="New Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -191,7 +186,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Employee ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Employee ID">
+                                <input type="text" class="form-control" name="pay_eid" placeholder="Employee ID">
                             </div>
                         </div>
                         <div class="form-group">
@@ -199,7 +194,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Amount to Pay">
+                                    <input type="text" class="form-control" name="pay_amt" placeholder="Amount to Pay">
                                 </div>
                             </div>
                         </div>
