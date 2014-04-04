@@ -26,16 +26,17 @@ public class TransactionTable extends database{
     {
         execute("create table tTable(tId int auto_increment, eId int,sId int,bDate varchar(30),nBal int,nOrd int,amount int,primary(tId))");
     }
-    int insertTransaction(Transaction t,Show s,Employee e)
+    int insertTransaction(Transaction t,String sId,String eId)
     {
         prepareStat("insert into tTable values(tId,?,?,?,?,?,?)");
         try {
-            pS.setInt(1,e.eId);
-            pS.setInt(2,s.sId);
+            pS.setInt(1,eId);
+            pS.setInt(2,sId);
             pS.setString(3,t.bDate);
             pS.setInt(4,t.nBal);
             pS.setInt(5,t.nOrd);
             t.amount = getAmount(t,s);
+            if(t.amount==-1) return -1;
             pS.setInt(6,t.amount);
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,7 +54,7 @@ public class TransactionTable extends database{
         }
         return t.tId;
     }
-    void deleteTransaction(String tId)
+    void deleteTransaction(String tId,String nBal_,String nOrd_)
     {
         execute("delete from tTable where tId="+Integer.parseInt(tId));
     }

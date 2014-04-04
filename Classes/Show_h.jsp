@@ -64,6 +64,18 @@ public class ShowTable extends database{
     {
         execute("delete from sTable where sId="+Integer.parseInt(sId));
     }
+    void changeSeat(String sId,String nBal,String nOrd)
+    {
+        prepareStat("update sTable set eCommission=eCommission+? and  where sId=?");
+        try {
+            pS.setInt(1,Integer.parseInt(nBal_));
+            pS.setInt(2,Integer.parseInt(nOrd_));
+            pS.setInt(3,Integer.parseInt(sId));
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        executeP();
+    }
     Show queryShow(String sId)
     {
         Show temp=null;

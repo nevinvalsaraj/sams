@@ -42,8 +42,8 @@
 
                 <div class="row alert alert-info" id="addexp">
                     <h3 class="text-center">Add Expense Record</h3>
-                    <form class="form-horizontal" role="form" method="POST" action="actions/addExp.jsp">
-                        
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_clerk.jsp">
+                        <input type="hidden" name="opr" value=1> 
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
@@ -77,7 +77,8 @@
 
                 <div class="row alert alert-info" id="delexp">
                     <h3 class="text-center">Delete Expense Record</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_clerk.jsp">
+                        <input type="hidden" name="opr" value=2>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense ID</label>
                             <div class="col-sm-8">

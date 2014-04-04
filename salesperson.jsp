@@ -42,7 +42,8 @@
 
                 <div class="row alert alert-info" id="issue">
                     <h3 class="text-center">Issue New Ticket</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_sales.jsp">
+                        <input type="hidden" name="opr" value=1>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
@@ -79,35 +80,34 @@
 
 
                 <div class="row alert alert-info" id="cancel">
-                    <div class="row alert alert-info">
-                        <h3 class="text-center">Cancel Ticket</h3>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Transaction ID</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
-                                </div>
+                    <h3 class="text-center">Cancel Ticket</h3>
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_sales.jsp">
+                        <input type="hidden" name="opr" value=2>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Transaction ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control bfh-number">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control bfh-number">
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control bfh-number">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control bfh-number">
                             </div>
-                            
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Cancel Ticket</button>
-                                </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Cancel Ticket</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
 

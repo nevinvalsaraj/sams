@@ -52,9 +52,9 @@ class ExpenseTable extends database{
         }
         return ex.exId;
     }
-    void deleteExpense(int exId)
+    void deleteExpense(String exId)
     {
-        execute("delete from exTable where exId="+exId);
+        execute("delete from exTable where exId="+Integer.parseInt(exId));
     }
     Expense queryExpense(int exId)
     {
