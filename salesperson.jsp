@@ -33,8 +33,14 @@
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
-
                 <div class="row alert alert-info">
+                    <ul class="nav nav-pills">
+                      <li><a href="#issue">Issue Ticket</a></li>
+                      <li><a href="#cancel">Cancel Ticket</a></li>
+                    </ul>
+                </div>
+
+                <div class="row alert alert-info" id="issue">
                     <h3 class="text-center">Issue New Ticket</h3>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
@@ -72,7 +78,7 @@
                 </div>
 
 
-                <div class="row alert alert-info">
+                <div class="row alert alert-info" id="cancel">
                     <div class="row alert alert-info">
                         <h3 class="text-center">Cancel Ticket</h3>
                         <form class="form-horizontal" role="form">
