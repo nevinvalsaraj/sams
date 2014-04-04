@@ -50,13 +50,7 @@
                                 <input type="text" class="form-control" id="inputEmail3" placeholder="Show ID">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Show Date</label>
-                            <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today">
-                                </div>
-                            </div>
-                        </div>
+                    
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
                             <div class="col-sm-8">
@@ -120,6 +114,7 @@
     <!-- Bootstrap JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="js/bootstrap-formhelpers.js"></script>
+    <script src="js/notify.min.js"></script>
 </body>
 
 </html>

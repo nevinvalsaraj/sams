@@ -51,9 +51,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Expense Description</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Expense Title</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="addexp_description" placeholder="Expense Description">
+                                <input type="text" class="form-control" name="addexp_title" placeholder="Expense Description">
                             </div>
                         </div>
                         <div class="form-group">
@@ -103,6 +103,7 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="js/notify.min.js"></script>
 </body>
 
 </html>
