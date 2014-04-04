@@ -6,15 +6,11 @@ class Employee{
     int eType;
     int eCommission;
     Employee(){}
-    Employee(int eId_,String ePassword_)
-    {
-        eId = eId_;
-        ePassword = ePassword_;
-    }
-    Employee(String eName_,String ePassword_)
+    Employee(String eName_,String ePassword_,String eType)
     {
         eName = eName_;
         ePassword = ePassword_;
+        eType = Integer.parseInt(eType);
     }
 }
 class EmployeeTable extends database{
@@ -49,27 +45,27 @@ class EmployeeTable extends database{
         }
         return e.eId;
     }
-    void deleteEmployee(int eId)
+    void deleteEmployee(String eId)
     {
-        execute("delete from eTable where eId="+eId);
+        execute("delete from eTable where eId="+Integer.parseInt(eId));
     }
-    void updateCommission(int eId,int incrementBy)
+    void updateCommission(String eId,String incrementBy)
     {
         prepareStat("update eTable set eCommission=eCommission+? where eId=?");
         try {
-            pS.setInt(1,incrementBy);
-            pS.setInt(2,eId);
+            pS.setInt(1,Integer.parseInt(incrementBy));
+            pS.setInt(2,Integer.parseInt(eId));
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         executeP();
     }
-    Employee validate(int eId,String ePassword)
+    Employee validate(String eId,String ePassword)
     {
         Employee temp = null;
         prepareStat("select * from eTable where eId=? and ePassword=?");
         try {
-            pS.setInt(1,eId);
+            pS.setInt(1,Integer.parseInt(eId));
             pS.setString(2,ePassword);
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,10 +88,10 @@ class EmployeeTable extends database{
         }
         return temp;
     }
-    Employee queryEmployee(int eId)
+    Employee queryEmployee(String eId)
     {
         Employee temp = null;
-        r = query("select * from eTable where eId="+eId);
+        r = query("select * from eTable where eId="+Integer.parseInt(eId));
         
         try {
             if(r.wasNull())

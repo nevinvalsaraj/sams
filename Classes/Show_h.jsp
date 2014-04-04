@@ -11,15 +11,15 @@ class Show{
     int pBal;
     int pOrd;
     Show(){}
-    Show(String sName_,String sDate_,String eDate_,int mBal_,int mOrd_,int pBal_,int pOrd_)
+    Show(String sName_,String sDate_,String eDate_,String mBal_,String mOrd_,String pBal_,String pOrd_)
     {
         sName = sName_;
         sDate = sDate_;
         eDate = eDate_;
-        mBal = mBal_;
-        mOrd = mOrd_;
-        pBal = pBal_;
-        pOrd = pOrd_;
+        mBal = Integer.parseInt(mBal_);
+        mOrd = Integer.parseInt(mOrd_);
+        pBal = Integer.parseInt(pBal_);
+        pOrd = Integer.parseInt(pOrd_);
     }
 }
 public class ShowTable extends database{
@@ -60,14 +60,14 @@ public class ShowTable extends database{
         s.sId = sId;
         return sId;
     }
-    void deleteShow(int sId)
+    void deleteShow(String sId)
     {
-        execute("delete from sTable where sId="+sId);
+        execute("delete from sTable where sId="+Integer.parseInt(sId));
     }
-    Show queryShow(int sId)
+    Show queryShow(String sId)
     {
         Show temp=null;
-        r = query("select * from sTable where sId="+sId);
+        r = query("select * from sTable where sId="+Integer.parseInt(sId));
         try {
             if(r.wasNull())
                 return null;
