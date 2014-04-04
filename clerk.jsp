@@ -40,13 +40,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="addexp_id" placeholder="Show ID">
+                                <input type="text" class="form-control" name="addexp_id" placeholder="Show ID">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense Description</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="addexp_description" placeholder="Expense Description">
+                                <input type="text" class="form-control" name="addexp_description" placeholder="Expense Description">
                             </div>
                         </div>
                         <div class="form-group">
@@ -54,7 +54,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="addexp_amount" placeholder="Expense amount">
+                                    <input type="text" class="form-control" name="addexp_amount" placeholder="Expense amount">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Expense ID</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="delexp_id" placeholder="Expense ID">
+                                    <input type="text" class="form-control" name="delexp_id" placeholder="Expense ID">
                                 </div>
                             </div>
                             
