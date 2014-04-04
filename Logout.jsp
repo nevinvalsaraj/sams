@@ -29,6 +29,7 @@
                 <div class="row alert alert-success">
                     <h3 class="text-center"><strong>Logged Out!</strong></h3>
                     <p class="text-center">You've successfully logged out from SAMS.</p>
+                    <a href="index.jsp" title="">Log In Again</a>
                 </div>
 
             </div>

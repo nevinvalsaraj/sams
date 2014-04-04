@@ -33,8 +33,17 @@
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
-
                 <div class="row alert alert-info">
+                    <ul class="nav nav-pills">
+                      <li><a href="#book">Book Show</a></li>
+                      <li><a href="#newlogin">Create Login</a></li>
+                      <li><a href="#deletelogin">Delete Login</a></li>
+                      <li><a href="#updatelogin">Update Login</a></li>
+                      <li><a href="#pay">Pay Commission</a></li>
+                    </ul>
+                </div>
+
+                <div class="row alert alert-info" id="book">
                     <h3 class="text-center">Book New Show</h3>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
@@ -102,108 +111,100 @@
                 </div>
 
 
-                <div class="row alert alert-info">
-                    <div class="row alert alert-info">
-                        <h3 class="text-center">Create New Salesperson Login</h3>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
-                                </div>
+                <div class="row alert alert-info" id="newlogin">
+                    <h3 class="text-center">Create New Salesperson Login</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="User Name">
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Password">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Password</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Password">
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Create Login</button>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Create Login</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="row alert alert-info">
-                    <div class="row alert alert-info">
-                        <h3 class="text-center">Delete Existing Salesperson Login</h3>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
-                                </div>
+                <div class="row alert alert-info" id="deletelogin">
+                    <h3 class="text-center">Delete Existing Salesperson Login</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Delete Login</button>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Delete Login</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="row alert alert-info">
-                    <div class="row alert alert-info">
-                        <h3 class="text-center">Update Existing Salesperson Details</h3>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
-                                </div>
+                <div class="row alert alert-info" id="updatelogin">
+                    <h3 class="text-center">Update Existing Salesperson Details</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="User ID">
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="New Name">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="New Name">
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="New Password">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="New Password">
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Update</button>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Update</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="row alert alert-info">
-                    <div class="row alert alert-info">
-                        <h3 class="text-center">Pay Commission</h3>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Employee ID</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Employee ID">
+                <div class="row alert alert-info" id="pay">
+                    <h3 class="text-center">Pay Commission</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Employee ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Employee ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Amount to Pay</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Rs.</span>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Amount to Pay">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Amount to Pay</label>
-                                <div class="col-sm-8">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Rs.</span>
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Amount to Pay">
-                                    </div>
-                                </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Pay Commission</button>
                             </div>
-                            
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Pay Commission</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
 
 
