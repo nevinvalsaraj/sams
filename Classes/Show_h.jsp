@@ -34,15 +34,17 @@ public class ShowTable extends database{
     }
     int insertShow(Show s)
     {
-        prepareStat("insert into sTable values(sId,?,?,?,?,?,0,0,?,?)");
+        prepareStat("insert into sTable values(sId,?,?,?,?,?,?,?,?,?)");
         try {
             pS.setString(1,s.sName);
             pS.setString(2,s.sDate.toString());
             pS.setString(3,s.eDate.toString());
             pS.setInt(4,s.mBal);
             pS.setInt(5,s.mOrd);
-            pS.setInt(6,s.pBal);
-            pS.setInt(7,s.pOrd);
+            pS.setInt(6,s.lBal);
+            pS.setInt(7,s.lOrd);
+            pS.setInt(8,s.pBal);
+            pS.setInt(9,s.pOrd);
         } catch (SQLException ex) {
             Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -73,7 +75,7 @@ public class ShowTable extends database{
         try {
             if(r.next())
                 r.first();
-            if(r.getInt(7) < nBal && r.getInt(8) < nOrd)
+            if(r.getInt(7) < nBal || r.getInt(8) < nOrd)
             {
                 r.close();
                 return false;
@@ -89,7 +91,7 @@ public class ShowTable extends database{
         int sId = Integer.parseInt(sId_);
         int nBal = Integer.parseInt(nBal_);
         int nOrd = Integer.parseInt(nOrd_);
-        prepareStat("update sTable set lBal=lBal-? and lOrd=lOrd-? where sId=?");
+        prepareStat("update sTable set lBal=lBal-?,lOrd=lOrd-? where sId=?");
         try{
             pS.setInt(1,nBal);
             pS.setInt(2,nOrd);

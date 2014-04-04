@@ -1,15 +1,15 @@
 <%@ include file="../Classes/includes.jsp" %>
 <%!
-int addTrasaction(HttpServletRequest request,HttpSession session)
+int addTransaction(HttpServletRequest request,HttpSession session)
 {
 	TransactionTable tt = new TransactionTable();
-	Transaction tt = new Transaction(request.getParameter("issue_bal"),request.getParameter("issue_ord"));
-	return tt.insertTransaction(tt,request.getParameter("issue_showid"),(String)session.getAttribute("id"));
+	Transaction t = new Transaction(request.getParameter("issue_bal"),request.getParameter("issue_ord"));
+	return tt.insertTransaction(t,request.getParameter("issue_showid"),(String)session.getAttribute("id"));
 }
 void deleteTransaction(HttpServletRequest request,HttpSession session)
 {
 	TransactionTable tt = new TransactionTable();
-	return ext.deleteTransaction(request.getParameter("cancel_transid"));
+	tt.deleteTransaction(request.getParameter("cancel_transid"));
 }
 %>
 <%

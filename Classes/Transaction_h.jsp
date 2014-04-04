@@ -29,7 +29,7 @@ public class TransactionTable extends database{
     int insertTransaction(Transaction t,String sId,String eId)
     {
         ShowTable st = new ShowTable();
-        if(st.checkSeat(sId,t.nBal+"",t.nOrd+""))
+        if(!st.checkSeat(sId,t.nBal+"",t.nOrd+""))
             return -1;
 
         st.changeSeat(sId,t.nBal+"",t.nOrd+"");
@@ -61,6 +61,16 @@ public class TransactionTable extends database{
     }
     void deleteTransaction(String tId)
     {
+        r = query("select * from tTable where tId="+Integer.parseInt(tId));
+        ShowTable st = new ShowTable();
+        try{
+            if(r.next())
+                r.first();
+            st.changeSeat(r.getInt(3)+"",-r.getInt(5)+"",-r.getInt(6)+"");
+        } catch (SQLException ex) {
+            Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         execute("delete from tTable where tId="+Integer.parseInt(tId));
     }
     Transaction queryTransaction(String tId)
