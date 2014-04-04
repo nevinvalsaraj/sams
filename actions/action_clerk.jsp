@@ -13,7 +13,6 @@ void deleteExpense(HttpServletRequest request,HttpSession session)
 }
 %>
 <%
-out.println(session.getAttribute("id"));
 switch(Integer.parseInt(request.getParameter("opr"))){
 	case 1:
 	addExpense(request,session);

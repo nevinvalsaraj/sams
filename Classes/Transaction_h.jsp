@@ -28,15 +28,20 @@ public class TransactionTable extends database{
     }
     int insertTransaction(Transaction t,String sId,String eId)
     {
+        ShowTable st = new ShowTable();
+        if(st.checkSeat(sId,t.nBal+"",t.nOrd+""))
+            return -1;
+
+        st.changeSeat(sId,t.nBal+"",t.nOrd+"");
+
         prepareStat("insert into tTable values(tId,?,?,?,?,?,?)");
         try {
-            pS.setInt(1,eId);
-            pS.setInt(2,sId);
+            pS.setInt(1,Integer.parseInt(eId));
+            pS.setInt(2,Integer.parseInt(sId));
             pS.setString(3,t.bDate);
             pS.setInt(4,t.nBal);
             pS.setInt(5,t.nOrd);
-            t.amount = getAmount(t,s);
-            if(t.amount==-1) return -1;
+            t.amount = getAmount(t,sId);
             pS.setInt(6,t.amount);
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
@@ -54,7 +59,7 @@ public class TransactionTable extends database{
         }
         return t.tId;
     }
-    void deleteTransaction(String tId,String nBal_,String nOrd_)
+    void deleteTransaction(String tId)
     {
         execute("delete from tTable where tId="+Integer.parseInt(tId));
     }
@@ -83,10 +88,10 @@ public class TransactionTable extends database{
         
         return temp;
     }
-    int getAmount(Transaction t,Show s)
+    int getAmount(Transaction t,String sId)
     {
         ShowTable st = new ShowTable();
-        s = st.queryShow(s.sId+"");
+        Show s = st.queryShow(sId);
         return s.pBal*t.nBal + s.pOrd*t.nOrd;
     }
 }

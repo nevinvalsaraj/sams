@@ -64,15 +64,38 @@ public class ShowTable extends database{
     {
         execute("delete from sTable where sId="+Integer.parseInt(sId));
     }
-    void changeSeat(String sId,String nBal,String nOrd)
+    boolean checkSeat(String sId_,String nBal_,String nOrd_)
     {
-        prepareStat("update sTable set eCommission=eCommission+? and  where sId=?");
+        int sId = Integer.parseInt(sId_);
+        int nBal = Integer.parseInt(nBal_);
+        int nOrd = Integer.parseInt(nOrd_);
+        r = query("select * from sTable where sId="+sId);
         try {
-            pS.setInt(1,Integer.parseInt(nBal_));
-            pS.setInt(2,Integer.parseInt(nOrd_));
-            pS.setInt(3,Integer.parseInt(sId));
+            if(r.next())
+                r.first();
+            if(r.getInt(7) < nBal && r.getInt(8) < nOrd)
+            {
+                r.close();
+                return false;
+            }
+            r.close();
         } catch (SQLException ex) {
-            Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
+    void changeSeat(String sId_,String nBal_,String nOrd_)
+    {
+        int sId = Integer.parseInt(sId_);
+        int nBal = Integer.parseInt(nBal_);
+        int nOrd = Integer.parseInt(nOrd_);
+        prepareStat("update sTable set lBal=lBal-? and lOrd=lOrd-? where sId=?");
+        try{
+            pS.setInt(1,nBal);
+            pS.setInt(2,nOrd);
+            pS.setInt(3,sId);
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         executeP();
     }

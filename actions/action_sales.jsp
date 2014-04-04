@@ -1,20 +1,19 @@
 <%@ include file="../Classes/includes.jsp" %>
 <%!
-void addTrasaction(HttpServletRequest request,HttpSession session)
+int addTrasaction(HttpServletRequest request,HttpSession session)
 {
 	TransactionTable tt = new TransactionTable();
-	Transaction tt = new Transaction(request.getParameter("addexp_title"),request.getParameter("addexp_description"));
-	ext.insertTransaction(tt,request.getParameter("addexp_id"),(String)session.getAttribute("id"));
+	Transaction tt = new Transaction(request.getParameter("issue_bal"),request.getParameter("issue_ord"));
+	return tt.insertTransaction(tt,request.getParameter("issue_showid"),(String)session.getAttribute("id"));
 }
 void deleteTransaction(HttpServletRequest request,HttpSession session)
 {
-	ExpenseTable ext = new ExpenseTable();
-	ext.deleteExpense(request.getParameter("delexp_id"));
+	TransactionTable tt = new TransactionTable();
+	return ext.deleteTransaction(request.getParameter("cancel_transid"));
 }
 %>
 <%
-out.println(session.getAttribute("id"));
-switch(Integer.parseInt(request.getParameter("opr"))){
+switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 1:
 	addTransaction(request,session);
 	break;
