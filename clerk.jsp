@@ -40,13 +40,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Show ID">
+                                <input type="text" class="form-control" id="addexp_id" placeholder="Show ID">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense Description</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Expense Description">
+                                <input type="text" class="form-control" id="addexp_description" placeholder="Expense Description">
                             </div>
                         </div>
                         <div class="form-group">
@@ -54,14 +54,14 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon">Rs.</span>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Expense amount">
+                                    <input type="text" class="form-control" id="addexp_amount" placeholder="Expense amount">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
-                                <button type="submit" class="btn btn-primary btn-default">Add Expense</button>
+                                <button type="submit" class="btn btn-primary btn-default" method="POST">Add Expense</button>
                             </div>
                         </div>
                     </form>
@@ -75,13 +75,13 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Expense ID</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Expense ID">
+                                    <input type="text" class="form-control" id="delexp_id" placeholder="Expense ID">
                                 </div>
                             </div>
                             
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-8">
-                                    <button type="submit" class="btn btn-primary btn-default">Delete Expense Record</button>
+                                    <button type="submit" class="btn btn-primary btn-default" method="POST">Delete Expense Record</button>
                                 </div>
                             </div>
                         </form>
