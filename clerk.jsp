@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-formhelpers.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                             Clerk Home
                         </strong>
                     </h3>
-                    <p class="text-center">Welcome to SAMS - Clerk Home</p>
+                    <p class="text-center">Welcome User!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
@@ -145,6 +146,7 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-formhelpers.js"></script>
     <script src="js/notify.min.js"></script>
 </body>
 
