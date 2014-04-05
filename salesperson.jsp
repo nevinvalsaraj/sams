@@ -21,7 +21,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+            
+            <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 hidden-xs">
+                <ul class="nav nav-pills nav-stacked alert alert-info" style="position:fixed">
+                  <li class="active"><a href="#issue">Issue Ticket</a></li>
+                  <li><a href="#cancel">Cancel Ticket</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12">
 
                 <div class="row alert alert-success">
                     <h3 class="text-center">
@@ -29,15 +38,8 @@
                             Salesperson Home
                         </strong>
                     </h3>
-                    <p class="text-center">Welcome  <%=session.getAttribute("user").toString()%>!</p>
+                    <p class="text-center">Welcome <%=session.getAttribute("user").toString()%>!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
-                </div>
-
-                <div class="row alert alert-info">
-                    <ul class="nav nav-pills">
-                      <li><a href="#issue">Issue Ticket</a></li>
-                      <li><a href="#cancel">Cancel Ticket</a></li>
-                    </ul>
                 </div>
 
                 <div class="row alert alert-info" id="issue">
@@ -102,6 +104,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-formhelpers.js"></script>
     <script src="js/notify.min.js"></script>
+    <script>
+    $('li').click(function() {
+        if (!$(this).hasClass('active')) {
+            $('li.active').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+    </script>
 </body>
 
 </html>

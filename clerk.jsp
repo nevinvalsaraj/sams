@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ include file="Classes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+
+            <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 hidden-xs">
+                <ul class="nav nav-pills nav-stacked alert alert-info" style="position: fixed">
+                  <li class="active"><a href="#">Expense Details</a></li>
+                  <li><a href="#">Add Expense</a></li>
+                  <li><a href="#delexp">Delete Expense</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12">
 
                 <div class="row alert alert-success">
                     <h3 class="text-center">
@@ -31,13 +41,6 @@
                     </h3>
                     <p class="text-center">Welcome <%=session.getAttribute("user").toString()%>!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
-                </div>
-
-                <div class="row alert alert-info">
-                    <ul class="nav nav-pills">
-                      <li><a href="#">Add Expense</a></li>
-                      <li><a href="#delexp">Delete Expense</a></li>
-                    </ul>
                 </div>
 
                 <div class="row">
@@ -153,6 +156,15 @@
             $('#addexp_datediv').find('div.input-group').find('input').attr("name", "addexp_date");
         });
     </script>
+    <script>
+    $('li').click(function() {
+        if (!$(this).hasClass('active')) {
+            $('li.active').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+    </script>
+
 </body>
 
 </html>
