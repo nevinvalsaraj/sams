@@ -56,6 +56,31 @@ class ExpenseTable extends database{
     {
         execute("delete from exTable where exId="+Integer.parseInt(exId));
     }
+    List<Expense> listExpense()
+    {
+        List<Expense> exList = new ArrayList();
+        Expense temp;
+
+        r = query("select * from exTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                temp = new Expense();
+                temp.exId = r.getInt(1);
+                temp.eId = r.getInt(2);
+                temp.sId = r.getInt(3);
+                temp.exTitle = r.getString(4);
+                temp.exDescripion = r.getString(5);
+                temp.exDate = r.getString(6);
+                temp.amount = r.getInt(7);
+                exList.add(temp);
+            }while(r.next());
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return exList;
+    }
     Expense queryExpense(int exId)
     {
         Expense temp = null;

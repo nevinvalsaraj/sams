@@ -99,6 +99,29 @@ class EmployeeTable extends database{
         }
         return temp;
     }
+    List<Employee> listEmployee()
+    {
+        List<Employee> eList = new ArrayList();
+        Employee temp;
+
+        r = query("select * from exTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                temp = new Employee();
+                temp.eId = r.getInt(1);
+                temp.eName = r.getString(2);
+                temp.ePassword = r.getString(3);
+                temp.eType = r.getInt(4);
+                temp.eCommission = r.getInt(5);
+                eList.add(temp);
+            }while(r.next());
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return eList;
+    }
     Employee queryEmployee(String eId)
     {
         Employee temp = null;

@@ -29,7 +29,7 @@ void payComm(HttpServletRequest request,HttpSession session)
 }
 %>
 <%
-/*switch(Integer.parseInt(request.getParameter("opr"))) {
+switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 1:
 	bookShow(request,session);
 	break;
@@ -45,9 +45,6 @@ void payComm(HttpServletRequest request,HttpSession session)
 	case 5:
 	payComm(request,session);
 	break;
-}*/
-String str = request.getParameter("book_edate");
-out.println(str);
-out.println(request.getParameter("book_edate"));
-//response.sendRedirect("../manager.jsp");
+}
+response.sendRedirect("../manager.jsp");
 %>

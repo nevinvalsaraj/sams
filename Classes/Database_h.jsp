@@ -7,7 +7,9 @@
 ,java.util.logging.Level
 ,java.util.logging.Logger
 ,sun.security.ssl.Debug
-,java.util.Date" %>
+,java.util.Date
+,java.util.List
+,java.util.ArrayList" %>
 
 <%! public class database {
     

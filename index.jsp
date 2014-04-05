@@ -26,7 +26,7 @@
                     <h3 class="text-center">Login Page</h3>
                     <div class="col-md-6 col-md-offset-3">
 
-                        <form class="form from-lg" role="form" method="post" action="login_submit" id="form_login">
+                        <form class="form from-lg" role="form" method="POST" action="checkLogin.jsp" id="form_login">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="User ID" name="id">
                             </div>

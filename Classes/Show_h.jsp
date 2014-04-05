@@ -103,8 +103,8 @@ class ShowTable extends database{
     }
     List<Show> listShow()
     {
-        List<Show> sList = new ArrayList<Show>();
-        Show temp = new Show();
+        List<Show> sList = new ArrayList();
+        Show temp;
 
         r = query("select * from sTable");
         try {
