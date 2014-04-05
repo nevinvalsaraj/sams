@@ -45,7 +45,7 @@
 
                 <div class="row alert alert-info" id="book">
                     <h3 class="text-center">Book New Show</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=1>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show Name</label>
@@ -109,7 +109,7 @@
 
                 <div class="row alert alert-info" id="newlogin">
                     <h3 class="text-center">Create New Salesperson Login</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=2>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
@@ -133,7 +133,7 @@
 
                 <div class="row alert alert-info" id="deletelogin">
                     <h3 class="text-center">Delete Existing Salesperson Login</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=3>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
@@ -151,7 +151,7 @@
 
                 <div class="row alert alert-info" id="updatelogin">
                     <h3 class="text-center">Update Existing Salesperson Details</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=4>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
@@ -181,7 +181,7 @@
 
                 <div class="row alert alert-info" id="pay">
                     <h3 class="text-center">Pay Commission</h3>
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=5>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Employee ID</label>

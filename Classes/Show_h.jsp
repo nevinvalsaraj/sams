@@ -41,8 +41,8 @@ public class ShowTable extends database{
             pS.setString(3,s.eDate.toString());
             pS.setInt(4,s.mBal);
             pS.setInt(5,s.mOrd);
-            pS.setInt(6,s.lBal);
-            pS.setInt(7,s.lOrd);
+            pS.setInt(6,s.mBal);
+            pS.setInt(7,s.mOrd);
             pS.setInt(8,s.pBal);
             pS.setInt(9,s.pOrd);
         } catch (SQLException ex) {

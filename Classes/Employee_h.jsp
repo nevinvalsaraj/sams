@@ -60,6 +60,17 @@ class EmployeeTable extends database{
         }
         executeP();
     }
+    void updatePassword(String eId,String newePassword)
+    {
+        prepareStat("update eTable set ePassword=? where eId=?");
+        try {
+            pS.setString(1,newePassword);
+            pS.setInt(2,Integer.parseInt(eId));
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        executeP();
+    }
     Employee validate(String eId,String ePassword)
     {
         Employee temp = null;
