@@ -29,8 +29,7 @@ void payComm(HttpServletRequest request,HttpSession session)
 }
 %>
 <%
-/*
-switch(Integer.parseInt(request.getParameter("opr"))) {
+/*switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 1:
 	bookShow(request,session);
 	break;

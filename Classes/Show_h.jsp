@@ -103,15 +103,15 @@ class ShowTable extends database{
     }
     List<Show> listShow()
     {
-        List<Show> sList;
+        List<Show> sList = new ArrayList<Show>();
         Show temp = new Show();
+
         r = query("select * from sTable");
         try {
-            if(r.wasNull())
-                return null;
             if(r.next())
                 r.first();
             do{
+                temp = new Show();
                 temp.sId = r.getInt(1);
                 temp.sName = r.getString(2);
                 temp.sDate = r.getString(3);
