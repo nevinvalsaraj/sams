@@ -42,6 +42,35 @@
                     </ul>
                 </div>
 
+                <div class="row" id="book">
+                    <h3 class="text-center">Show Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Price - Ord</th>
+                                <th>Price - Bal</th>
+                                <th>Seats - Ord</th>
+                                <th>Seats - Bal</th>
+                            </tr>
+                            <tr>
+                                <td>Item1</td>
+                                <td>Item2</td>
+                                <td>Item3</td>
+                                <td>Item3</td>
+                                <td>Item3</td>
+                                <td>Item4</td>
+                                <td>Item5</td>
+                                <td>Item6</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+
                 <div class="row alert alert-info" id="book">
                     <h3 class="text-center">Book New Show</h3>
                     <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
