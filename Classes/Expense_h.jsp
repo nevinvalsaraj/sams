@@ -4,15 +4,15 @@ class Expense{
     int eId;
     int sId;
     String exTitle;
-    String exDescripion;
+    String exDescription;
     String exDate;
     int amount;
     Expense(){}
-    Expense(String exTitle_,String exDescription_,String amount_){
+    Expense(String exTitle_,String exDescription_,String exDate_,String amount_){
         Date d = new Date();
         exTitle=exTitle_;
-        exDescripion=exDescription_;
-        exDate = d.toString();
+        exDescription=exDescription_;
+        exDate = exDate_;
         amount = Integer.parseInt(amount_);
     }
 }
@@ -33,7 +33,7 @@ class ExpenseTable extends database{
             pS.setInt(1,Integer.parseInt(eId));
             pS.setInt(2,Integer.parseInt(sId));
             pS.setString(3,ex.exTitle);
-            pS.setString(4,ex.exDescripion);
+            pS.setString(4,ex.exDescription);
             pS.setString(5,ex.exDate);
             pS.setInt(6,ex.amount);
         } catch (SQLException et) {
@@ -71,7 +71,7 @@ class ExpenseTable extends database{
                 temp.eId = r.getInt(2);
                 temp.sId = r.getInt(3);
                 temp.exTitle = r.getString(4);
-                temp.exDescripion = r.getString(5);
+                temp.exDescription = r.getString(5);
                 temp.exDate = r.getString(6);
                 temp.amount = r.getInt(7);
                 exList.add(temp);
@@ -96,7 +96,7 @@ class ExpenseTable extends database{
             temp.eId = r.getInt(2);
             temp.sId = r.getInt(3);
             temp.exTitle = r.getString(4);
-            temp.exDescripion = r.getString(5);
+            temp.exDescription = r.getString(5);
             temp.exDate = r.getString(6);
             temp.amount = r.getInt(7);
             r.close();

@@ -51,20 +51,17 @@
                                 <th>Amount</th>
                             </tr>
                             <%
-                            ShowTable st = new ShowTable();
-                            List<Show> sl = st.listShow();
-                            for(int i=0;i<sl.size();i++)
+                            ExpenseTable ext = new ExpenseTable();
+                            List<Expense> exl = ext.listExpense();
+                            for(int i=0;i<exl.size();i++)
                             {
                             %>
                                 <tr>
-                                    <td><%=sl.get(i).sId%></td>
-                                    <td><%=sl.get(i).sName%></td>
-                                    <td><%=sl.get(i).sDate%></td>
-                                    <td><%=sl.get(i).eDate%></td>
-                                    <td><%=sl.get(i).pOrd%></td>
-                                    <td><%=sl.get(i).pBal%></td>
-                                    <td><%=sl.get(i).lOrd%></td>
-                                    <td><%=sl.get(i).lBal%></td>
+                                    <td><%=exl.get(i).exId%></td>
+                                    <td><%=exl.get(i).exTitle%></td>
+                                    <td><%=exl.get(i).exDescription%></td>
+                                    <td><%=exl.get(i).exDate%></td>
+                                    <td><%=exl.get(i).amount%></td>
                                 </tr>
                             <% } %>
                         </table>
