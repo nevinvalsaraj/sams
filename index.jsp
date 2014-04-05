@@ -9,7 +9,7 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -44,24 +44,9 @@
     </div>
 
     <!-- jQuery -->
-    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        var loginform = $('#form_login');
-        loginform.submit(function(){
-            $.ajax({
-                type:loginform.attr('method'),
-                url:loginform.attr('action'),
-                data:loginform.serialize(),
-                success: function (data) {
-                    var result = data;
-                    $('#result').attr("value", result);
-                }
-            });
-            return false;
-        });
-    </script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
