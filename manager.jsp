@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@ include file="Classes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,17 +57,23 @@
                                 <th>Seats - Ord</th>
                                 <th>Seats - Bal</th>
                             </tr>
-                            <tr>
-                                <td>Item1</td>
-                                <td>Item2</td>
-                                <td>Item3</td>
-                                <td>Item3</td>
-                                <td>Item3</td>
-                                <td>Item4</td>
-                                <td>Item5</td>
-                                <td>Item6</td>
-                            </tr>
-                            
+                            <%
+                            ShowTable st = new ShowTable();
+                            List<Show> sl = st.listShow();
+                            for(int i=0;i<sl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=sl.get(i).sId%></td>
+                                    <td><%=sl.get(i).sName%></td>
+                                    <td><%=sl.get(i).sDate%></td>
+                                    <td><%=sl.get(i).eDate%></td>
+                                    <td><%=sl.get(i).pOrd%></td>
+                                    <td><%=sl.get(i).pBal%></td>
+                                    <td><%=sl.get(i).lOrd%></td>
+                                    <td><%=sl.get(i).lBal%></td>
+                                </tr>
+                            <% } %>
                         </table>
                     </div>
                 </div>
