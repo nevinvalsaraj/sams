@@ -8,7 +8,7 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap-formhelpers.css" rel="stylesheet" media="screen">
 </head>
 
@@ -206,17 +206,23 @@
     </div>
 
     <!-- jQuery -->
-    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-formhelpers.js">$('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
-        $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");</script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-formhelpers.js"></script>
+
     <script src="js/notify.min.js"></script>
     
     <script>
         
         $.notify("Hello World", "success");
+        $( document ).ready(function() {
+            $('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
+            $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");
+        });
     </script>
+
 </body>
 
 </html>
