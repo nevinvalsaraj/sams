@@ -1,5 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
-<%@ include file="Classes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,14 +55,14 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Start Date</label>
                             <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="y-m-d" data-date="today">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="book_start">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">End Date</label>
                             <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="book_end">
                                 </div>
                             </div>
                         </div>
@@ -210,9 +209,12 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-formhelpers.js"></script>
+    <script src="js/bootstrap-formhelpers.js">$('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
+        $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");</script>
     <script src="js/notify.min.js"></script>
+    
     <script>
+        
         $.notify("Hello World", "success");
     </script>
 </body>

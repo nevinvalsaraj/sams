@@ -22,7 +22,7 @@ class Show{
         pOrd = Integer.parseInt(pOrd_);
     }
 }
-public class ShowTable extends database{
+class ShowTable extends database{
     ShowTable()
     {
         createSTable();
@@ -37,8 +37,8 @@ public class ShowTable extends database{
         prepareStat("insert into sTable values(sId,?,?,?,?,?,?,?,?,?)");
         try {
             pS.setString(1,s.sName);
-            pS.setString(2,s.sDate.toString());
-            pS.setString(3,s.eDate.toString());
+            pS.setString(2,s.sDate);
+            pS.setString(3,s.eDate);
             pS.setInt(4,s.mBal);
             pS.setInt(5,s.mOrd);
             pS.setInt(6,s.mBal);
@@ -100,6 +100,34 @@ public class ShowTable extends database{
             Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         executeP();
+    }
+    List<Show> listShow()
+    {
+        List<Show> sList;
+        Show temp = new Show();
+        r = query("select * from sTable");
+        try {
+            if(r.wasNull())
+                return null;
+            if(r.next())
+                r.first();
+            do{
+                temp.sId = r.getInt(1);
+                temp.sName = r.getString(2);
+                temp.sDate = r.getString(3);
+                temp.eDate = r.getString(4);
+                temp.mBal = r.getInt(5);
+                temp.mOrd = r.getInt(6);
+                temp.lBal = r.getInt(7);
+                temp.lOrd = r.getInt(8);
+                temp.pBal = r.getInt(9);
+                temp.pOrd = r.getInt(10);
+                sList.add(temp);
+            }while(r.next());
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sList;
     }
     Show queryShow(String sId)
     {

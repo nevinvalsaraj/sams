@@ -3,7 +3,7 @@
 void bookShow(HttpServletRequest request,HttpSession session)
 {
 	ShowTable st = new ShowTable();
-	Show s = new Show(request.getParameter("book_name"),"1","1",request.getParameter("book_seatbal"),request.getParameter("book_seatord"),request.getParameter("book_pricebal"),request.getParameter("book_priceord"));
+	Show s = new Show(request.getParameter("book_name"),request.getParameter("book_sdate"),request.getParameter("book_edate"),request.getParameter("book_seatbal"),request.getParameter("book_seatord"),request.getParameter("book_pricebal"),request.getParameter("book_priceord"));
 	st.insertShow(s);
 }
 void createLogin(HttpServletRequest request,HttpSession session)
@@ -29,6 +29,7 @@ void payComm(HttpServletRequest request,HttpSession session)
 }
 %>
 <%
+/*
 switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 1:
 	bookShow(request,session);
@@ -45,6 +46,9 @@ switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 5:
 	payComm(request,session);
 	break;
-}
-response.sendRedirect("../manager.jsp");
+}*/
+String str = request.getParameter("book_edate");
+out.println(str);
+out.println(request.getParameter("book_edate"));
+//response.sendRedirect("../manager.jsp");
 %>

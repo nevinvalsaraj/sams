@@ -26,7 +26,7 @@
                     <h3 class="text-center">Login Page</h3>
                     <div class="col-md-6 col-md-offset-3">
 
-                        <form class="form from-lg" role="form" action="checkLogin.jsp" method="post">
+                        <form class="form from-lg" role="form" method="post" action="login_submit" id="form_login">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="User ID" name="id">
                             </div>
@@ -47,6 +47,21 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var loginform = $('#form_login');
+        loginform.submit(function(){
+            $.ajax({
+                type:loginform.attr('method'),
+                url:loginform.attr('action'),
+                data:loginform.serialize(),
+                success: function (data) {
+                    var result = data;
+                    $('#result').attr("value", result);
+                }
+            });
+            return false;
+        });
+    </script>
 </body>
 
 </html>
