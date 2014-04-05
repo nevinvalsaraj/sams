@@ -39,6 +39,38 @@
                     </ul>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Expenses Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            <%
+                            ShowTable st = new ShowTable();
+                            List<Show> sl = st.listShow();
+                            for(int i=0;i<sl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=sl.get(i).sId%></td>
+                                    <td><%=sl.get(i).sName%></td>
+                                    <td><%=sl.get(i).sDate%></td>
+                                    <td><%=sl.get(i).eDate%></td>
+                                    <td><%=sl.get(i).pOrd%></td>
+                                    <td><%=sl.get(i).pBal%></td>
+                                    <td><%=sl.get(i).lOrd%></td>
+                                    <td><%=sl.get(i).lBal%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+
 
                 <div class="row alert alert-info" id="addexp">
                     <h3 class="text-center">Add Expense Record</h3>
@@ -60,6 +92,13 @@
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense Description</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="addexp_description" placeholder="Expense Description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Date</label>
+                            <div class="col-sm-8">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="addexp_date">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

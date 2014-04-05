@@ -43,10 +43,10 @@
                     </ul>
                 </div>
 
-                <div class="row" id="book">
+                <div class="row">
                     <h3 class="text-center">Show Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_show">
                             <tr class="info">
                                 <th>ID</th>
                                 <th>Name</th>
@@ -256,6 +256,13 @@
         $( document ).ready(function() {
             $('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
             $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");
+            // change color if no seats available
+            $('#table_show tr').each(function() {
+                var temp1 = $(this).find("td").eq(6).html();
+                var temp2 = $(this).find("td").eq(7).html();
+                if(temp1 == "0" && temp2 == "0")
+                    $(this).attr("class","danger");
+            });
         });
     </script>
 
