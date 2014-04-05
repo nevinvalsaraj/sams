@@ -95,7 +95,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Date</label>
                             <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="addexp_date">
+                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="addexp_datediv">
                                 </div>
                             </div>
                         </div>
@@ -148,6 +148,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-formhelpers.js"></script>
     <script src="js/notify.min.js"></script>
+        $( document ).ready(function() {
+            $('#addexp_datediv').find('div.input-group').find('input').attr("name", "addexp_date");
+        });
+    </script>
 </body>
 
 </html>
