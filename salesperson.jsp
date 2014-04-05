@@ -29,7 +29,7 @@
                             Salesperson Home
                         </strong>
                     </h3>
-                    <p class="text-center">Welcome to SAMS - Salesperson Home</p>
+                    <p class="text-center">Welcome User!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
