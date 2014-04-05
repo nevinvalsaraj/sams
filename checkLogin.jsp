@@ -15,6 +15,7 @@
 				if(e!=null)
 				{
 					session.setAttribute("id",id);
+					session.setAttribute("user",e.eName);
 					if(e.eType == 0)
 						response.sendRedirect("manager.jsp");	
 					else if(e.eType == 1)

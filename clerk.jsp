@@ -29,7 +29,7 @@
                             Clerk Home
                         </strong>
                     </h3>
-                    <p class="text-center">Welcome User!</p>
+                    <p class="text-center">Welcome <%=session.getAttribute("user").toString()%>!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
