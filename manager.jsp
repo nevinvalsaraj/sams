@@ -112,9 +112,9 @@
                     <form class="form-horizontal" role="form" method="POST" action="actions/action_manager.jsp">
                         <input type="hidden" name="opr" value=2>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Employee Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="newlogin_name" placeholder="User Name">
+                                <input type="text" class="form-control" name="newlogin_name" placeholder="Employee Name">
                             </div>
                         </div>
                         <div class="form-group">
@@ -157,12 +157,6 @@
                             <label for="inputEmail3" class="col-sm-4 control-label">User ID</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="updatelogin_userid" placeholder="User ID">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">New Name</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="updatelogin_name" placeholder="New Name">
                             </div>
                         </div>
                         <div class="form-group">

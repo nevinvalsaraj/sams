@@ -53,7 +53,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense Title</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="addexp_title" placeholder="Expense Description">
+                                <input type="text" class="form-control" name="addexp_title" placeholder="Expense Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Expense Description</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="addexp_description" placeholder="Expense Description">
                             </div>
                         </div>
                         <div class="form-group">

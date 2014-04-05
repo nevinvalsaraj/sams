@@ -84,19 +84,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">No. of Ordinary tickets</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number" name="cancel_ord">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">No. of Balcony tickets</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number" name="cancel_bal">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
                                 <button type="submit" class="btn btn-primary btn-default">Cancel Ticket</button>
                             </div>
