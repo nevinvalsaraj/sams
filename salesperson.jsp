@@ -24,8 +24,11 @@
             
             <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 hidden-xs">
                 <ul class="nav nav-pills nav-stacked alert alert-info" style="position:fixed">
-                  <li class="active"><a href="#issue">Issue Ticket</a></li>
+                  <li class="active"><a href="#table_show">Show Details</a></li>
+                  <li><a href="#issue">Issue Ticket</a></li>
+                  <li><a href="#table_transaction">Transaction Details</a></li>
                   <li><a href="#cancel">Cancel Ticket</a></li>
+                  <li><a href="#table_expense">Finance Details</a></li>
                 </ul>
             </div>
 
@@ -112,7 +115,7 @@
                 <div class="row">
                     <h3 class="text-center">Transaction Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_transaction">
                             <tr class="info">
                                 <th>Transaction ID</th>
                                 <th>Show ID</th>
@@ -163,7 +166,7 @@
                 <div class="row">
                     <h3 class="text-center">Financial Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_expense">
                             <tr class="info">
                                 <th>ID</th>
                                 <th>Name</th>
