@@ -15,10 +15,13 @@ void deleteTransaction(HttpServletRequest request,HttpSession session)
 <%
 switch(Integer.parseInt(request.getParameter("opr"))) {
 	case 1:
-	addTransaction(request,session);
+	if(addTransaction(request,session)!=-1)
+		response.sendRedirect("../ticket.jsp");
+	else
+		response.sendRedirect("../salesperson.jsp");
 	break;
 	case 2:
 	deleteTransaction(request,session);
+	response.sendRedirect("../salesperson.jsp");
 }
-response.sendRedirect("../salesperson.jsp");
 %>

@@ -113,7 +113,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="issue_showid" placeholder="Show ID">
+                                <input type="text" class="form-control" name="issue_showid" value="0" placeholder="Show ID">
                             </div>
                         </div>
                     
