@@ -8,11 +8,12 @@ class Expense{
     String exDate;
     int amount;
     Expense(){}
-    Expense(String exTitle_,String exDescription_,String exDate_,String amount_){
+    Expense(String exTitle_,String exDescription_,String amount_){
         Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        exDate=sdf.format(d);
         exTitle=exTitle_;
         exDescription=exDescription_;
-        exDate = exDate_;
         amount = Integer.parseInt(amount_);
     }
 }
@@ -28,6 +29,10 @@ class ExpenseTable extends database{
     }
     int insertExpense(Expense ex,String sId,String eId)
     {
+        ShowTable st = new ShowTable();
+        Show s = st.queryShow(sId);
+        if(s==null)
+            return -1;
         prepareStat("insert into exTable values(exId,?,?,?,?,?,?)");
         try {
             pS.setInt(1,Integer.parseInt(eId));
@@ -107,7 +112,7 @@ class ExpenseTable extends database{
             if(r.next())
                 r.first();
             else return null;
-            
+
             temp = new Expense();
             temp.exId = r.getInt(1);
             temp.eId = r.getInt(2);

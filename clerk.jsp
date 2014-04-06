@@ -24,8 +24,9 @@
 
             <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 hidden-xs">
                 <ul class="nav nav-pills nav-stacked alert alert-info" style="position: fixed">
-                  <li class="active"><a href="#">Expense Details</a></li>
-                  <li><a href="#">Add Expense</a></li>
+                  <li class="active"><a href="#table_show">Show Details</a></li>
+                  <li><a href="#addexp">Add Expense</a></li>
+                  <li><a href="#table_expense">Expense Details</a></li>
                   <li><a href="#delexp">Delete Expense</a></li>
                 </ul>
             </div>
@@ -44,34 +45,31 @@
                 </div>
 
                 <div class="row">
-                    <h3 class="text-center">Expenses Details</h3>
+                    <h3 class="text-center">Show Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_show">
                             <tr class="info">
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Date</th>
-                                <th>Amount</th>
+                                <th>Show ID</th>
+                                <th>Show Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                             </tr>
                             <%
-                            ExpenseTable ext = new ExpenseTable();
-                            List<Expense> exl = ext.listExpense();
-                            for(int i=0;i<exl.size();i++)
+                            ShowTable st = new ShowTable();
+                            List<Show> sl = st.listShow();
+                            for(int i=0;i<sl.size();i++)
                             {
                             %>
                                 <tr>
-                                    <td><%=exl.get(i).exId%></td>
-                                    <td><%=exl.get(i).exTitle%></td>
-                                    <td><%=exl.get(i).exDescription%></td>
-                                    <td><%=exl.get(i).exDate%></td>
-                                    <td><%=exl.get(i).amount%></td>
+                                    <td><%=sl.get(i).sId%></td>
+                                    <td><%=sl.get(i).sName%></td>
+                                    <td><%=sl.get(i).sDate%></td>
+                                    <td><%=sl.get(i).eDate%></td>
                                 </tr>
                             <% } %>
                         </table>
                     </div>
                 </div>
-
 
                 <div class="row alert alert-info" id="addexp">
                     <h3 class="text-center">Add Expense Record</h3>
@@ -96,13 +94,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Date</label>
-                            <div class="col-sm-8">
-                                <div class="bfh-datepicker" data-format="d-m-y" data-date="today" id="addexp_datediv">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Expense amount</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
@@ -120,6 +111,34 @@
                     </form>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Expenses Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_expense">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            <%
+                            ExpenseTable ext = new ExpenseTable();
+                            List<Expense> exl = ext.listExpense();
+                            for(int i=0;i<exl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=exl.get(i).exId%></td>
+                                    <td><%=exl.get(i).exTitle%></td>
+                                    <td><%=exl.get(i).exDescription%></td>
+                                    <td><%=exl.get(i).exDate%></td>
+                                    <td><%=exl.get(i).amount%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
 
                 <div class="row alert alert-info" id="delexp">
                     <h3 class="text-center">Delete Expense Record</h3>

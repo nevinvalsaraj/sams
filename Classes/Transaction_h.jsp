@@ -69,6 +69,7 @@ public class TransactionTable extends database{
     {
         TransactionTable tt = new TransactionTable();
         Transaction t = tt.queryTransaction(tId);
+        if(t==null) return;
         EmployeeTable et = new EmployeeTable();
         et.updateCommission(t.eId+"",t.sId+"",-t.amount+"");
 
@@ -175,7 +176,8 @@ public class TransactionTable extends database{
             return t.amount-10;
         else if(diff>=1)
             return t.amount-50;
-        else return t.amount/2;
+        else if(diff>=0) return t.amount/2;
+        else return 0;
     }
 }
 %>

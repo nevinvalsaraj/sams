@@ -3,7 +3,7 @@
 void addExpense(HttpServletRequest request,HttpSession session)
 {
 	ExpenseTable ext = new ExpenseTable();
-	Expense ex = new Expense(request.getParameter("addexp_title"),request.getParameter("addexp_description"),request.getParameter("addexp_date"),request.getParameter("addexp_amount"));
+	Expense ex = new Expense(request.getParameter("addexp_title"),request.getParameter("addexp_description"),request.getParameter("addexp_amount"));
 	ext.insertExpense(ex,request.getParameter("addexp_id"),(String)session.getAttribute("id"));
 }
 void deleteExpense(HttpServletRequest request,HttpSession session)

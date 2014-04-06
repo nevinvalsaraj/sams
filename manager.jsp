@@ -30,6 +30,9 @@
                   <li><a href="#deletelogin">Delete Login</a></li>
                   <li><a href="#updatelogin">Update Login</a></li>
                   <li><a href="#pay">Pay Commission</a></li>
+                  <li><a href="#table_transaction">Finance Details</a></li>
+                  <li><a href="#table_expense">Expense Details</a></li>
+                  <li><a href="#table_employee">Employee Details</a></li>
                 </ul>
             </div>
 
@@ -139,7 +142,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Percent Commission</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control bfh-number" name="book_pcommission">
+                                <input type="text" class="form-control bfh-number" data-max="100" name="book_pcommission">
                             </div>
                         </div>
 
@@ -249,7 +252,7 @@
                 <div class="row">
                     <h3 class="text-center">Financial Report</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_transaction">
                             <tr class="info">
                                 <th>Commission(-)</th>
                                 <th>Expense(-)</th>
@@ -272,9 +275,37 @@
                 </div>
 
                 <div class="row">
+                    <h3 class="text-center">Expenses Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_expense">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            <%
+                            List<Expense> exl = ext.listExpense();
+                            for(int i=0;i<exl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=exl.get(i).exId%></td>
+                                    <td><%=exl.get(i).exTitle%></td>
+                                    <td><%=exl.get(i).exDescription%></td>
+                                    <td><%=exl.get(i).exDate%></td>
+                                    <td><%=exl.get(i).amount%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
                     <h3 class="text-center">Employee Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_employee">
                             <tr class="info">
                                 <th>ID</th>
                                 <th>Name</th>
