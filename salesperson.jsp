@@ -24,7 +24,10 @@
             
             <div class="col-md-1 col-sm-1 col-md-offset-1 col-sm-offset-1 hidden-xs">
                 <ul class="nav nav-pills nav-stacked alert alert-info" style="position:fixed">
-                  <li class="active"><a href="#issue">Issue Ticket</a></li>
+                  <li class="active"><a href="#table_myaccount">My Account Details</a></li>
+                  <li><a href="#table_show">Show Details</a></li>
+                  <li><a href="#issue">Issue Ticket</a></li>
+                  <li><a href="#table_transaction">Transaction Details</a></li>
                   <li><a href="#cancel">Cancel Ticket</a></li>
                 </ul>
             </div>
@@ -40,6 +43,32 @@
                     </h3>
                     <p class="text-center">Welcome <%=session.getAttribute("user").toString()%>!</p>
                     <a href="Logout.jsp"><strong>Logout</strong></a>
+                </div>
+
+                <div class="row">
+                    <h3 class="text-center">My Account Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_myaccount">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Total Commission</th>
+                                <th>Unpaid Commision</th>
+                            </tr>
+                            <%
+                            EmployeeTable ee = new EmployeeTable();
+                            Employee e = ee.queryEmployee(session.getAttribute("id").toString());
+                            %>
+                                <tr>
+                                    <td><%=e.eId%></td>
+                                    <td><%=e.eName%></td>
+                                    <td><%=((e.eType==0)?"Manager":((e.eType==1)?"Clerk":"Salesperson"))%></td>
+                                    <td><%=e.eCommission%></td>
+                                    <td><%=e.eCommission-e.ePaid%></td>
+                                </tr>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -112,7 +141,7 @@
                 <div class="row">
                     <h3 class="text-center">Transaction Details</h3>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="table_transaction">
                             <tr class="info">
                                 <th>Transaction ID</th>
                                 <th>Show ID</th>
@@ -160,31 +189,7 @@
                     </form>
                 </div>
 
-                <div class="row">
-                    <h3 class="text-center">Financial Details</h3>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <tr class="info">
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Total Commission</th>
-                                <th>Amount Paid</th>
-                            </tr>
-                            <%
-                            EmployeeTable ee = new EmployeeTable();
-                            Employee e = ee.queryEmployee(session.getAttribute("id").toString());
-                            %>
-                                <tr>
-                                    <td><%=e.eId%></td>
-                                    <td><%=e.eName%></td>
-                                    <td><%=((e.eType==0)?"Manager":((e.eType==1)?"Clerk":"Salesperson"))%></td>
-                                    <td><%=e.eCommission%></td>
-                                    <td><%=e.ePaid%></td>
-                                </tr>
-                        </table>
-                    </div>
-                </div>
+                
 
             </div>
         </div>

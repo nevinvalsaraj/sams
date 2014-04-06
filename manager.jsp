@@ -30,7 +30,8 @@
                   <li><a href="#deletelogin">Delete Login</a></li>
                   <li><a href="#updatelogin">Update Login</a></li>
                   <li><a href="#pay">Pay Commission</a></li>
-                  <li><a href="#table_transaction">Finance Details</a></li>
+                  <li><a href="#table_report">Finance Report</a></li>
+                  <li><a href="#table_transaction">Transaction Details</a></li>
                   <li><a href="#table_expense">Expense Details</a></li>
                   <li><a href="#table_employee">Employee Details</a></li>
                 </ul>
@@ -250,9 +251,9 @@
                 </div>
 
                 <div class="row">
-                    <h3 class="text-center">Financial Report</h3>
+                    <h2 class="text-center" id="table_report"><strong>Financial Report</strong></h2>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover" id="table_transaction">
+                        <table class="table table-striped table-bordered table-hover">
                             <tr class="info">
                                 <th>Commission(-)</th>
                                 <th>Expense(-)</th>
@@ -270,6 +271,40 @@
                                     <td><%=tt.totalTransaction()%></td>
                                     <td><%=et.netProfit()%></td>
                                 </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h3 class="text-center">Transaction Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_transaction">
+                            <tr class="info">
+                                <th>Transaction ID</th>
+                                <th>Show ID</th>
+                                <th>Employee ID</th>
+                                <th>Booking Date</th>
+                                <th>Seats - Ord</th>
+                                <th>Seats - Bal</th>
+                                <th>Amount</th>
+                                <th>Refund</th>
+                            </tr>
+                            <%
+                            List<Transaction> tl = tt.listAllTransaction();
+                            for(int i=0;i<tl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=tl.get(i).tId%></td>
+                                    <td><%=tl.get(i).sId%></td>
+                                    <td><%=tl.get(i).eId%></td>
+                                    <td><%=tl.get(i).bDate%></td>
+                                    <td><%=tl.get(i).nOrd%></td>
+                                    <td><%=tl.get(i).nBal%></td>
+                                    <td><%=tl.get(i).amount%></td>
+                                    <td><%=tt.refundAmount(tl.get(i))%></td>
+                                </tr>
+                            <% } %>
                         </table>
                     </div>
                 </div>

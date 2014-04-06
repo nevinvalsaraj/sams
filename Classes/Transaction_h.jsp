@@ -85,6 +85,32 @@ public class TransactionTable extends database{
         
         execute("delete from tTable where tId="+Integer.parseInt(tId));
     }
+    List<Transaction> listAllTransaction()
+    {
+        List<Transaction> tList = new ArrayList();
+        Transaction temp;
+
+        r = query("select * from tTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                temp = new Transaction();
+                temp.tId = r.getInt(1);
+                temp.eId = r.getInt(2);
+                temp.sId = r.getInt(3);
+                temp.bDate = r.getString(4);
+                temp.nBal = r.getInt(5);
+                temp.nOrd = r.getInt(6);
+                temp.amount = r.getInt(7);
+                tList.add(temp);
+            }while(r.next());
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tList;
+    }
     List<Transaction> listTransaction(String eId)
     {
         List<Transaction> tList = new ArrayList();
