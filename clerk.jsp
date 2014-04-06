@@ -169,7 +169,6 @@
     <!-- Bootstrap JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-formhelpers.js"></script>
-    <script src="js/notify.min.js"></script>
     <script>
         $( document ).ready(function() {
             $('#addexp_datediv').find('div.input-group').find('input').attr("name", "addexp_date");

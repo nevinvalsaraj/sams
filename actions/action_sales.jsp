@@ -9,7 +9,7 @@ int addTransaction(HttpServletRequest request,HttpSession session)
 void deleteTransaction(HttpServletRequest request,HttpSession session)
 {
 	TransactionTable tt = new TransactionTable();
-	tt.deleteTransaction(request.getParameter("cancel_transid"));
+	tt.deleteTransaction(request.getParameter("cancel_transid"),(String)session.getAttribute("id"));
 }
 %>
 <%

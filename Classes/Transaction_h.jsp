@@ -65,25 +65,25 @@ public class TransactionTable extends database{
         }
         return t.tId;
     }
-    void deleteTransaction(String tId)
+    void deleteTransaction(String tId,String eId)
     {
         TransactionTable tt = new TransactionTable();
         Transaction t = tt.queryTransaction(tId);
         if(t==null) return;
-        EmployeeTable et = new EmployeeTable();
-        et.updateCommission(t.eId+"",t.sId+"",-t.amount+"");
 
-        r = query("select * from tTable where tId="+Integer.parseInt(tId));
+        r = query("select * from tTable where tId="+tId+" and eId="+eId);
         ShowTable st = new ShowTable();
         try{
             if(r.next())
                 r.first();
+            else return;
             st.changeSeat(r.getInt(3)+"",-r.getInt(5)+"",-r.getInt(6)+"");
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        execute("delete from tTable where tId="+Integer.parseInt(tId));
+        EmployeeTable et = new EmployeeTable();
+        et.updateCommission(t.eId+"",t.sId+"",-t.amount+"");
+        execute("delete from tTable where tId="+tId+" and eId="+eId);
     }
     List<Transaction> listAllTransaction()
     {
