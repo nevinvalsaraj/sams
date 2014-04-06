@@ -76,10 +76,27 @@ class ExpenseTable extends database{
                 temp.amount = r.getInt(7);
                 exList.add(temp);
             }while(r.next());
+            r.close();
         } catch (SQLException ex) {
             Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         return exList;
+    }
+    int totalExpense()
+    {
+        int totEx=0;
+        r = query("select * from exTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                totEx += r.getInt(7);
+            }while(r.next());
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return totEx;
     }
     Expense queryExpense(int exId)
     {
@@ -87,10 +104,10 @@ class ExpenseTable extends database{
         r = query("select * from exTable where exId="+exId);
 
         try {
-            if(r.wasNull())
-                return null;
             if(r.next())
                 r.first();
+            else return null;
+            
             temp = new Expense();
             temp.exId = r.getInt(1);
             temp.eId = r.getInt(2);

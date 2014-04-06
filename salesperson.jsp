@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ include file="Classes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +42,41 @@
                     <a href="Logout.jsp"><strong>Logout</strong></a>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Show Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_show">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Price - Ord</th>
+                                <th>Price - Bal</th>
+                                <th>Seats - Ord</th>
+                                <th>Seats - Bal</th>
+                            </tr>
+                            <%
+                            ShowTable st = new ShowTable();
+                            List<Show> sl = st.listShow();
+                            for(int i=0;i<sl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=sl.get(i).sId%></td>
+                                    <td><%=sl.get(i).sName%></td>
+                                    <td><%=sl.get(i).sDate%></td>
+                                    <td><%=sl.get(i).eDate%></td>
+                                    <td><%=sl.get(i).pOrd%></td>
+                                    <td><%=sl.get(i).pBal%></td>
+                                    <td><%=sl.get(i).lOrd%></td>
+                                    <td><%=sl.get(i).lBal%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+
                 <div class="row alert alert-info" id="issue">
                     <h3 class="text-center">Issue New Ticket</h3>
                     <form class="form-horizontal" role="form" method="POST" action="actions/action_sales.jsp">
@@ -74,6 +109,38 @@
                     </form>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Transaction Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>Transaction ID</th>
+                                <th>Show ID</th>
+                                <th>Booking Date</th>
+                                <th>Seats - Ord</th>
+                                <th>Seats - Bal</th>
+                                <th>Amount</th>
+                                <th>Refund</th>
+                            </tr>
+                            <%
+                            TransactionTable tt = new TransactionTable();
+                            List<Transaction> tl = tt.listTransaction(session.getAttribute("id").toString());
+                            for(int i=0;i<tl.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=tl.get(i).tId%></td>
+                                    <td><%=tl.get(i).sId%></td>
+                                    <td><%=tl.get(i).bDate%></td>
+                                    <td><%=tl.get(i).nOrd%></td>
+                                    <td><%=tl.get(i).nBal%></td>
+                                    <td><%=tl.get(i).amount%></td>
+                                    <td><%=tt.refundAmount(tl.get(i))%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
 
                 <div class="row alert alert-info" id="cancel">
                     <h3 class="text-center">Cancel Ticket</h3>
@@ -93,6 +160,31 @@
                     </form>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Financial Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Total Commission</th>
+                                <th>Amount Paid</th>
+                            </tr>
+                            <%
+                            EmployeeTable ee = new EmployeeTable();
+                            Employee e = ee.queryEmployee(session.getAttribute("id").toString());
+                            %>
+                                <tr>
+                                    <td><%=e.eId%></td>
+                                    <td><%=e.eName%></td>
+                                    <td><%=((e.eType==0)?"Manager":((e.eType==1)?"Clerk":"Salesperson"))%></td>
+                                    <td><%=e.eCommission%></td>
+                                    <td><%=e.ePaid%></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -104,6 +196,20 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-formhelpers.js"></script>
     <script src="js/notify.min.js"></script>
+    <script>
+        
+        $( document ).ready(function() {
+            $('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
+            $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");
+            // change color if no seats available
+            $('#table_show tr').each(function() {
+                var temp1 = $(this).find("td").eq(6).html();
+                var temp2 = $(this).find("td").eq(7).html();
+                if(temp1 == "0" && temp2 == "0")
+                    $(this).attr("class","danger");
+            });
+        });
+    </script>
     <script>
     $('li').click(function() {
         if (!$(this).hasClass('active')) {

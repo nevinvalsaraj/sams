@@ -11,7 +11,8 @@ class Transaction{
     Transaction(String nBal_,String nOrd_)
     {
         Date d = new Date();
-        bDate = d.toString();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        bDate=sdf.format(d);
         nBal = Integer.parseInt(nBal_);
         nOrd = Integer.parseInt(nOrd_);
     }
@@ -29,6 +30,9 @@ public class TransactionTable extends database{
     int insertTransaction(Transaction t,String sId,String eId)
     {
         ShowTable st = new ShowTable();
+        Show s = st.queryShow(sId);
+        if(s==null)
+            return -1;
         if(!st.checkSeat(sId,t.nBal+"",t.nOrd+""))
             return -1;
 
@@ -46,6 +50,8 @@ public class TransactionTable extends database{
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
         }
+        EmployeeTable et = new EmployeeTable();
+        et.updateCommission(eId,sId,t.amount+"");
         executeP();
         r = query("select tId from tTable");
         t.tId=1;
@@ -61,6 +67,11 @@ public class TransactionTable extends database{
     }
     void deleteTransaction(String tId)
     {
+        TransactionTable tt = new TransactionTable();
+        Transaction t = tt.queryTransaction(tId);
+        EmployeeTable et = new EmployeeTable();
+        et.updateCommission(t.eId+"",t.sId+"",-t.amount+"");
+
         r = query("select * from tTable where tId="+Integer.parseInt(tId));
         ShowTable st = new ShowTable();
         try{
@@ -73,12 +84,12 @@ public class TransactionTable extends database{
         
         execute("delete from tTable where tId="+Integer.parseInt(tId));
     }
-    List<Transaction> listTransaction()
+    List<Transaction> listTransaction(String eId)
     {
         List<Transaction> tList = new ArrayList();
         Transaction temp;
 
-        r = query("select * from exTable");
+        r = query("select * from tTable where eId="+eId);
         try {
             if(r.next())
                 r.first();
@@ -93,10 +104,27 @@ public class TransactionTable extends database{
                 temp.amount = r.getInt(7);
                 tList.add(temp);
             }while(r.next());
+            r.close();
         } catch (SQLException ex) {
             Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
         }
         return tList;
+    }
+    int totalTransaction()
+    {
+        int totTr=0;
+        r = query("select * from tTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                totTr += r.getInt(7);
+            }while(r.next());
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return totTr;
     }
     Transaction queryTransaction(String tId)
     {
@@ -104,10 +132,10 @@ public class TransactionTable extends database{
         r = query("select * from tTable where tId="+Integer.parseInt(tId));
 
         try {
-            if(r.wasNull())
-                return null;
             if(r.next())
                 r.first();
+            else return null;
+
             temp = new Transaction();
             temp.tId = r.getInt(1);
             temp.eId = r.getInt(2);
@@ -128,6 +156,26 @@ public class TransactionTable extends database{
         ShowTable st = new ShowTable();
         Show s = st.queryShow(sId);
         return s.pBal*t.nBal + s.pOrd*t.nOrd;
+    }
+    int refundAmount(Transaction t)
+    {
+        ShowTable st = new ShowTable();
+        Show s = st.queryShow(t.sId+"");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Date dsDate = new Date();
+        Date dcDate = new Date();
+        try {
+            dsDate = sdf.parse(s.sDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        long diff = (dsDate.getTime()-dcDate.getTime())/(1000*60*60*24);
+
+        if(diff>3)
+            return t.amount-10;
+        else if(diff>=1)
+            return t.amount-50;
+        else return t.amount/2;
     }
 }
 %>

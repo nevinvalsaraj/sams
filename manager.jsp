@@ -58,6 +58,7 @@
                                 <th>Price - Bal</th>
                                 <th>Seats - Ord</th>
                                 <th>Seats - Bal</th>
+                                <th>Percent Commission</th>
                             </tr>
                             <%
                             ShowTable st = new ShowTable();
@@ -74,6 +75,7 @@
                                     <td><%=sl.get(i).pBal%></td>
                                     <td><%=sl.get(i).lOrd%></td>
                                     <td><%=sl.get(i).lBal%></td>
+                                    <td><%=sl.get(i).pCommission%></td>
                                 </tr>
                             <% } %>
                         </table>
@@ -134,7 +136,13 @@
                                 <input type="text" class="form-control bfh-number" name="book_seatord">
                             </div>
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Percent Commission</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control bfh-number" name="book_pcommission">
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
                                 <button type="submit" class="btn btn-primary btn-default">Book Show</button>
@@ -238,6 +246,58 @@
                     </form>
                 </div>
 
+                <div class="row">
+                    <h3 class="text-center">Financial Report</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>Commission(-)</th>
+                                <th>Expense(-)</th>
+                                <th>Ticketss(+)</th>
+                                <th>Net Profit(+)</th>
+                            </tr>
+                            <%
+                            EmployeeTable et = new EmployeeTable();
+                            ExpenseTable ext = new ExpenseTable();
+                            TransactionTable tt = new TransactionTable();
+                            %>
+                                <tr>
+                                    <td><%=et.totalCommission()%></td>
+                                    <td><%=ext.totalExpense()%></td>
+                                    <td><%=tt.totalTransaction()%></td>
+                                    <td><%=et.netProfit()%></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h3 class="text-center">Employee Details</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tr class="info">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Amount to be Paid</th>
+                            </tr>
+                            <%
+                            EmployeeTable ee = new EmployeeTable();
+                            List<Employee> el = ee.listEmployee();
+                            for(int i=0;i<el.size();i++)
+                            {
+                            %>
+                                <tr>
+                                    <td><%=el.get(i).eId%></td>
+                                    <td><%=el.get(i).eName%></td>
+                                    <td><%=((el.get(i).eType==0)?"Manager":((el.get(i).eType==1)?"Clerk":"Salesperson"))%></td>
+                                    <td><%=el.get(i).eCommission-el.get(i).ePaid%></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -254,7 +314,6 @@
     
     <script>
         
-        $.notify("Hello World", "success");
         $( document ).ready(function() {
             $('#book_start').find('div.input-group').find('input').attr("name", "book_sdate");
             $('#book_end').find('div.input-group').find('input').attr("name", "book_edate");
