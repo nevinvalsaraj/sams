@@ -41,7 +41,7 @@
                             </tr>
                             <%
                             TransactionTable tt = new TransactionTable();
-                            List<Transaction> tl = tt.listTransaction(session.getAttribute("id").toString());
+                            List<Transaction> tl = tt.listETransaction(session.getAttribute("id").toString());
                             int i=tl.size()-1;
                             %>
                                 <tr>

@@ -153,7 +153,7 @@
                             </tr>
                             <%
                             TransactionTable tt = new TransactionTable();
-                            List<Transaction> tl = tt.listTransaction(session.getAttribute("id").toString());
+                            List<Transaction> tl = tt.listETransaction(session.getAttribute("id").toString());
                             for(int i=0;i<tl.size();i++)
                             {
                             %>

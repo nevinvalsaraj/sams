@@ -87,10 +87,52 @@ class ExpenseTable extends database{
         }
         return exList;
     }
+    List<Expense> listSExpense(String sId)
+    {
+        List<Expense> exList = new ArrayList();
+        Expense temp;
+
+        r = query("select * from exTable where sId="+sId);
+        try {
+            if(r.next())
+                r.first();
+            do{
+                temp = new Expense();
+                temp.exId = r.getInt(1);
+                temp.eId = r.getInt(2);
+                temp.sId = r.getInt(3);
+                temp.exTitle = r.getString(4);
+                temp.exDescription = r.getString(5);
+                temp.exDate = r.getString(6);
+                temp.amount = r.getInt(7);
+                exList.add(temp);
+            }while(r.next());
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return exList;
+    }
     int totalExpense()
     {
         int totEx=0;
         r = query("select * from exTable");
+        try {
+            if(r.next())
+                r.first();
+            do{
+                totEx += r.getInt(7);
+            }while(r.next());
+            r.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ShowTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return totEx;
+    }
+    int totalSExpense(String sId)
+    {
+        int totEx=0;
+        r = query("select * from exTable where sId="+sId);
         try {
             if(r.next())
                 r.first();

@@ -30,6 +30,7 @@
                   <li><a href="#deletelogin">Delete Login</a></li>
                   <li><a href="#updatelogin">Update Login</a></li>
                   <li><a href="#pay">Pay Commission</a></li>
+                  <li><a href="#showreport">Get Show Report</a></li>
                   <li><a href="#table_report">Finance Report</a></li>
                   <li><a href="#table_transaction">Transaction Details</a></li>
                   <li><a href="#table_expense">Expense Details</a></li>
@@ -77,8 +78,8 @@
                                     <td><%=sl.get(i).eDate%></td>
                                     <td><%=sl.get(i).pOrd%></td>
                                     <td><%=sl.get(i).pBal%></td>
-                                    <td><%=sl.get(i).lOrd%></td>
-                                    <td><%=sl.get(i).lBal%></td>
+                                    <td><%=sl.get(i).mOrd%></td>
+                                    <td><%=sl.get(i).mBal%></td>
                                     <td><%=sl.get(i).pCommission%></td>
                                 </tr>
                             <% } %>
@@ -250,6 +251,25 @@
                     </form>
                 </div>
 
+                <div class="row alert alert-info" id="showreport">
+                    <h3 class="text-center">Generate Show Report</h3>
+                    <form class="form-horizontal" role="form" method="POST" action="showReport.jsp">
+                        <input type="hidden" name="opr" value=6>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Show ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="showreport_id" placeholder="Employee ID">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-default">Generate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="row">
                     <h2 class="text-center" id="table_report"><strong>Financial Report</strong></h2>
                     <div class="table-responsive">
@@ -257,7 +277,7 @@
                             <tr class="info">
                                 <th>Commission(-)</th>
                                 <th>Expense(-)</th>
-                                <th>Ticketss(+)</th>
+                                <th>Tickets(+)</th>
                                 <th>Net Profit(+)</th>
                             </tr>
                             <%
@@ -314,7 +334,8 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover" id="table_expense">
                             <tr class="info">
-                                <th>ID</th>
+                                <th>Expense ID</th>
+                                <th>Show ID</th>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Date</th>
@@ -327,6 +348,7 @@
                             %>
                                 <tr>
                                     <td><%=exl.get(i).exId%></td>
+                                    <td><%=exl.get(i).sId%></td>
                                     <td><%=exl.get(i).exTitle%></td>
                                     <td><%=exl.get(i).exDescription%></td>
                                     <td><%=exl.get(i).exDate%></td>
