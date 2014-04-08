@@ -77,7 +77,7 @@ public class TransactionTable extends database{
             if(r.next())
                 r.first();
             else return;
-            st.changeSeat(r.getInt(3)+"",-r.getInt(5)+"",-r.getInt(6)+"");
+            st.changeSeat(r.getInt(3)+"","-"+r.getInt(5),"-"+r.getInt(6));
         } catch (SQLException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -222,7 +222,7 @@ public class TransactionTable extends database{
         } catch (ParseException ex) {
             Logger.getLogger(TransactionTable.class.getName()).log(Level.SEVERE, null, ex);
         }
-        long diff = (dsDate.getTime()-dcDate.getTime())/(1000*60*60*24);
+        double diff = (dsDate.getTime()-dcDate.getTime())/(1000.0*60*60*24);
 
         if(diff>3)
             return t.amount-10;
